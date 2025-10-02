@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAP - Simpel Accounting Program</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fas fa-calculator me-2"></i>SIAP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle"></i> Admin
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Pengaturan</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Keluar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-2 col-md-3 sidebar p-0">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" data-target="home-content">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#daftar-akun" data-target="daftar-akun-content">
+                            <i class="fas fa-list"></i> Daftar Akun
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kartu-persediaan" data-target="kartu-persediaan-content">
+                            <i class="fas fa-boxes"></i> Kartu Persediaan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#input-transaksi" data-target="input-transaksi-content">
+                            <i class="fas fa-edit"></i> Input Transaksi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#jurnal-umum" data-target="jurnal-umum-content">
+                            <i class="fas fa-book"></i> Jurnal Umum
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#neraca-saldo" data-target="neraca-saldo-content">
+                            <i class="fas fa-balance-scale"></i> Neraca Saldo
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#jurnal-penyesuaian" data-target="jurnal-penyesuaian-content">
+                            <i class="fas fa-adjust"></i> Jurnal Penyesuaian
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#neraca-saldo-setelah" data-target="neraca-saldo-setelah-content">
+                            <i class="fas fa-balance-scale-right"></i> Neraca Saldo Setelah Penyesuaian
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#neraca-lajur" data-target="neraca-lajur-content">
+                            <i class="fas fa-table"></i> Neraca Lajur
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#laporan-keuangan" data-target="laporan-keuangan-content">
+                            <i class="fas fa-chart-line"></i> Laporan Keuangan
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-10 col-md-9 mt-4">
+                <!-- Home Content -->
+                <div id="home-content" class="content">
+                    <h2 class="mb-4">Selamat Datang di SIAP</h2>
+                    
+                    <!-- Profil Perusahaan -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-building me-2"></i> Profil Perusahaan
+                        </div>
+                        <div class="card-body">
+                            <p>SIAP (Simpel Accounting Program) adalah platform pencatatan keuangan yang dirancang khusus untuk UMKM. Dengan antarmuka yang sederhana dan mudah dipahami, SIAP membantu pelaku UMKM yang awam dengan akuntansi untuk dapat mengelola laporan keuangan mereka dengan mudah.</p>
+                            <p>Platform ini menyediakan fitur lengkap mulai dari pencatatan transaksi hingga pembuatan laporan keuangan secara otomatis.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Fitur-Fitur Website -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-cogs me-2"></i> Fitur-Fitur Website
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-list"></i>
+                                    </div>
+                                    <h5>Daftar Akun</h5>
+                                    <p>Kelola akun-akun perusahaan dengan mudah</p>
+                                </div>
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-boxes"></i>
+                                    </div>
+                                    <h5>Kartu Persediaan</h5>
+                                    <p>Pantau persediaan barang dengan sistem yang terintegrasi</p>
+                                </div>
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-edit"></i>
+                                    </div>
+                                    <h5>Input Transaksi</h5>
+                                    <p>Catat transaksi keuangan dengan cepat dan akurat</p>
+                                </div>
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <h5>Jurnal Umum</h5>
+                                    <p>Lihat ringkasan semua transaksi dalam bentuk jurnal</p>
+                                </div>
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-balance-scale"></i>
+                                    </div>
+                                    <h5>Neraca Saldo</h5>
+                                    <p>Periksa keseimbangan debit dan kredit akun-akun</p>
+                                </div>
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h5>Laporan Keuangan</h5>
+                                    <p>Hasilkan laporan keuangan lengkap secara otomatis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Langkah-Langkah Penggunaan -->
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fas fa-play-circle me-2"></i> Langkah-Langkah Penggunaan
+                        </div>
+                        <div class="card-body">
+                            <ol class="list-group list-group-numbered">
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Setup Awal</div>
+                                        Buat daftar akun perusahaan sesuai dengan kebutuhan bisnis Anda
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Input Transaksi</div>
+                                        Catat setiap transaksi keuangan yang terjadi dalam bisnis Anda
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Verifikasi Data</div>
+                                        Periksa jurnal umum dan neraca saldo untuk memastikan keakuratan data
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Penyesuaian</div>
+                                        Lakukan penyesuaian jika diperlukan pada akhir periode
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Laporan Keuangan</div>
+                                        Hasilkan laporan keuangan lengkap dengan satu klik
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daftar Akun Content -->
+                <div id="daftar-akun-content" class="content hidden">
+                    <h2 class="mb-4">Daftar Akun</h2>
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span>Daftar Akun Perusahaan</span>
+                            <button class="btn btn-primary btn-sm" id="tambah-akun-btn"><i class="fas fa-plus me-1"></i> Tambah Akun</button>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Kode Akun</th>
+                                        <th>Nama Akun</th>
+                                        <th>Kategori</th>
+                                        <th>Saldo Awal</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="akun-table-body">
+                                    <tr>
+                                        <td>101</td>
+                                        <td>Kas</td>
+                                        <td>Aset Lancar</td>
+                                        <td>Rp 50.000.000</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>102</td>
+                                        <td>Piutang Usaha</td>
+                                        <td>Aset Lancar</td>
+                                        <td>Rp 25.000.000</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>201</td>
+                                        <td>Utang Usaha</td>
+                                        <td>Kewajiban</td>
+                                        <td>Rp 15.000.000</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Transaksi Content -->
+                <div id="input-transaksi-content" class="content hidden">
+                    <h2 class="mb-4">Input Transaksi</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            Form Input Transaksi
+                        </div>
+                        <div class="card-body">
+                            <form id="transaksi-form">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="tanggal" class="form-label">Tanggal Transaksi</label>
+                                        <input type="date" class="form-control" id="tanggal" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="jenis" class="form-label">Jenis Transaksi</label>
+                                        <select class="form-select" id="jenis" required>
+                                            <option value="" selected disabled>Pilih Jenis Transaksi</option>
+                                            <option value="pembelian">Pembelian</option>
+                                            <option value="penjualan">Penjualan</option>
+                                            <option value="pengeluaran">Pengeluaran</option>
+                                            <option value="penerimaan">Penerimaan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="keterangan" class="form-label">Keterangan</label>
+                                    <input type="text" class="form-control" id="keterangan" placeholder="Masukkan keterangan transaksi" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Detail Transaksi</label>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="detail-transaksi-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Akun</th>
+                                                    <th>Debit</th>
+                                                    <th>Kredit</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-select" required>
+                                                            <option value="" selected disabled>Pilih Akun</option>
+                                                            <option>Kas</option>
+                                                            <option>Piutang Usaha</option>
+                                                            <option>Pendapatan</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input type="number" class="form-control debit-input" placeholder="0" min="0"></td>
+                                                    <td><input type="number" class="form-control kredit-input" placeholder="0" min="0"></td>
+                                                    <td><button type="button" class="btn btn-danger btn-sm hapus-baris-btn"><i class="fas fa-trash"></i></button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary btn-sm" id="tambah-baris-btn"><i class="fas fa-plus me-1"></i> Tambah Baris</button>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>Total Debit: <span id="total-debit">0</span></strong> | 
+                                    <strong>Total Kredit: <span id="total-kredit">0</span></strong>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Simpan Transaksi</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laporan Keuangan Content -->
+                <div id="laporan-keuangan-content" class="content hidden">
+                    <h2 class="mb-4">Laporan Keuangan</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            Pilih Periode Laporan
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <label for="periode-awal" class="form-label">Periode Awal</label>
+                                    <input type="date" class="form-control" id="periode-awal">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="periode-akhir" class="form-label">Periode Akhir</label>
+                                    <input type="date" class="form-control" id="periode-akhir">
+                                </div>
+                                <div class="col-md-4 d-flex align-items-end">
+                                    <button class="btn btn-primary" id="tampilkan-laporan-btn">Tampilkan Laporan</button>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <i class="fas fa-chart-line me-2"></i> Laporan Laba/Rugi
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Laporan yang menunjukkan kinerja keuangan perusahaan selama periode tertentu.</p>
+                                            <button class="btn btn-outline-primary lihat-laporan-btn" data-laporan="laba-rugi">Lihat Laporan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <i class="fas fa-users me-2"></i> Laporan Perubahan Ekuitas
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Laporan yang menunjukkan perubahan ekuitas pemilik selama periode tertentu.</p>
+                                            <button class="btn btn-outline-primary lihat-laporan-btn" data-laporan="perubahan-ekuitas">Lihat Laporan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <i class="fas fa-balance-scale me-2"></i> Laporan Posisi Keuangan
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Laporan yang menunjukkan posisi aset, kewajiban, dan ekuitas pada tanggal tertentu.</p>
+                                            <button class="btn btn-outline-primary lihat-laporan-btn" data-laporan="posisi-keuangan">Lihat Laporan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <i class="fas fa-sticky-note me-2"></i> Catatan atas Laporan Keuangan
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Penjelasan tambahan yang memberikan informasi lebih detail tentang laporan keuangan.</p>
+                                            <button class="btn btn-outline-primary lihat-laporan-btn" data-laporan="catatan-laporan">Lihat Laporan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content untuk fitur lainnya -->
+                <div id="kartu-persediaan-content" class="content hidden">
+                    <h2 class="mb-4">Kartu Persediaan</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Fitur Kartu Persediaan akan menampilkan data persediaan barang.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="jurnal-umum-content" class="content hidden">
+                    <h2 class="mb-4">Jurnal Umum</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Fitur Jurnal Umum akan menampilkan semua transaksi dalam bentuk jurnal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="neraca-saldo-content" class="content hidden">
+                    <h2 class="mb-4">Neraca Saldo</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Fitur Neraca Saldo akan menampilkan keseimbangan debit dan kredit akun-akun.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="jurnal-penyesuaian-content" class="content hidden">
+                    <h2 class="mb-4">Jurnal Penyesuaian</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Fitur Jurnal Penyesuaian akan menampilkan penyesuaian yang dilakukan pada akhir periode.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="neraca-saldo-setelah-content" class="content hidden">
+                    <h2 class="mb-4">Neraca Saldo Setelah Penyesuaian</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Fitur Neraca Saldo Setelah Penyesuaian akan menampilkan neraca saldo setelah dilakukan penyesuaian.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="neraca-lajur-content" class="content hidden">
+                    <h2 class="mb-4">Neraca Lajur</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Fitur Neraca Lajur akan menampilkan worksheet akuntansi yang membantu dalam penyusunan laporan keuangan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container text-center">
+            <p>&copy; 2023 SIAP - Simpel Accounting Program. All rights reserved.</p>
+            <p>Website ini dikembangkan khusus untuk membantu UMKM dalam mengelola laporan keuangan.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
